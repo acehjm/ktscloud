@@ -1,10 +1,10 @@
-package com.github.acehjm.ktcloud
+package com.github.acehjm.solbycloud
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class KtcloudApplicationTests {
+class SolbycloudApplicationTests {
 
 	@Test
 	fun contextLoads() {
