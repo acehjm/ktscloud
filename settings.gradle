@@ -1,1 +1,5 @@
 rootProject.name = 'solbycloud'
+include 'common-gateway'
+include 'common-auth'
+include 'config-center'
+
