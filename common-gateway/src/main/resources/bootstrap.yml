@@ -11,4 +11,4 @@ spring:
         prefix: common-gateway
 
 server:
-  port: 8810
+  port: 8900

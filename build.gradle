@@ -35,7 +35,7 @@ subprojects {
 
     dependencies {
 //	implementation 'org.springframework.boot.experimental:spring-boot-actuator-autoconfigure-r2dbc'
-//	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
 //	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 //	implementation 'org.springframework.boot.experimental:spring-boot-starter-data-r2dbc'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
