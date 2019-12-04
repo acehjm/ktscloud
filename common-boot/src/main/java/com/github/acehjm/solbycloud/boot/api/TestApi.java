@@ -11,12 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/12/3
  */
 @RestController
-@RequestMapping("/test")
+@RequestMapping
 public class TestApi {
 
-    @GetMapping
-    public String test() {
+    @GetMapping("/success")
+    public String success() {
         return "success";
+    }
+
+    @GetMapping("/failure")
+    public String failure() {
+        return "failure";
     }
 
 }
