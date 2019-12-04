@@ -26,7 +26,7 @@ public class SolbyGlobalFilter implements GlobalFilter, Ordered {
         return chain.filter(exchange)
                 // then的内容会在过滤器返回的时候执行，即最后执行
                 .then(Mono.fromRunnable(() ->
-                        log.info("[{}] 接口的访问耗时：{}/ms", path, Instant.now().toEpochMilli() - start))
+                        log.info("[{}] 接口访问耗时：{}/ms", path, Instant.now().toEpochMilli() - start))
                 );
     }
 
