@@ -3,6 +3,7 @@ package com.github.acehjm.solbycloud.gateway.filter;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 import java.security.Principal;
 
@@ -17,6 +18,7 @@ import java.security.Principal;
 public class AuthorizationFilter {
 
     @Bean
+    @Order(2)
     public GlobalFilter authGlobalFilter() {
         return (exchange, chain) -> exchange.getPrincipal()
                 .map(Principal::getName)
