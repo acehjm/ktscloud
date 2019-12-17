@@ -18,7 +18,7 @@ import java.security.Principal;
 public class AuthorizationFilter {
 
     @Bean
-    @Order(2)
+    @Order(0) // 过滤器的执行顺序::数字越大表示优先级越低，越后执行
     public GlobalFilter authGlobalFilter() {
         return (exchange, chain) -> exchange.getPrincipal()
                 .map(Principal::getName)

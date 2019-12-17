@@ -38,7 +38,7 @@ subprojects {
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
 //	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 //	implementation 'org.springframework.boot.experimental:spring-boot-starter-data-r2dbc'
-//	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 //	implementation 'org.springframework.boot:spring-boot-starter-mail'
 //	implementation 'org.springframework.boot:spring-boot-starter-quartz'
