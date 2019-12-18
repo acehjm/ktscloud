@@ -20,7 +20,6 @@ import static com.github.acehjm.solbycloud.auth.constant.AuthConstant.CLIENT_SEC
 import static com.github.acehjm.solbycloud.auth.constant.AuthConstant.REFRESH_TOKEN_VALIDITY_SECONDS;
 import static com.github.acehjm.solbycloud.auth.constant.AuthConstant.SCOPE_READ;
 import static com.github.acehjm.solbycloud.auth.constant.AuthConstant.SCOPE_WRITE;
-import static com.github.acehjm.solbycloud.auth.constant.AuthConstant.TRUST;
 
 /**
  * com.github.acehjm.solbycloud.auth.config
@@ -47,7 +46,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .withClient(CLIENT_ID)
                 .secret(new BCryptPasswordEncoder().encode(CLIENT_SECRET))
                 .authorizedGrantTypes(GrantTypeEnum.types())
-                .scopes(SCOPE_READ, SCOPE_WRITE, TRUST)
+                .scopes(SCOPE_READ, SCOPE_WRITE)
                 .accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS)
                 .refreshTokenValiditySeconds(REFRESH_TOKEN_VALIDITY_SECONDS);
     }
