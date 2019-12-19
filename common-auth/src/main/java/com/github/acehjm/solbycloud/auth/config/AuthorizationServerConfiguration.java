@@ -42,6 +42,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        // todo: replace with jdbc
         clients.inMemory()
                 .withClient(CLIENT_ID)
                 .secret(new BCryptPasswordEncoder().encode(CLIENT_SECRET))
