@@ -50,16 +50,16 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.inMemory()
-//                .withClient(CLIENT_ID)
-//                .secret(new BCryptPasswordEncoder().encode(CLIENT_SECRET))
-//                .authorizedGrantTypes(GrantTypeEnum.types())
-//                .scopes(SCOPE_READ, SCOPE_WRITE)
-//                .accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS)
-//                .refreshTokenValiditySeconds(REFRESH_TOKEN_VALIDITY_SECONDS);
+        clients.inMemory()
+                .withClient(CLIENT_ID)
+                .secret(new BCryptPasswordEncoder().encode(CLIENT_SECRET))
+                .authorizedGrantTypes(GrantTypeEnum.types())
+                .scopes(SCOPE_READ, SCOPE_WRITE)
+                .accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS)
+                .refreshTokenValiditySeconds(REFRESH_TOKEN_VALIDITY_SECONDS);
 
         // with jdbc
-         clients.withClientDetails(jdbcClientDetails());
+        // clients.withClientDetails(jdbcClientDetails());
     }
 
     @Override
