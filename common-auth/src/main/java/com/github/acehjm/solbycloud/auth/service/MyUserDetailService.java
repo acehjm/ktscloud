@@ -3,14 +3,12 @@ package com.github.acehjm.solbycloud.auth.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +34,8 @@ public class MyUserDetailService implements UserDetailsService {
         authorities.add(new SimpleGrantedAuthority("ADMIN"));
         authorities.add(new SimpleGrantedAuthority("GUEST"));
 
-        String password = new BCryptPasswordEncoder().encode("pwd");
-        return new User("uname", password, authorities);
+        String password = new BCryptPasswordEncoder().encode(username);
+        return new User(username, password, authorities);
     }
 
 
