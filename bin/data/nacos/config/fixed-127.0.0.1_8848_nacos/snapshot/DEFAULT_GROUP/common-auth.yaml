@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/solby
+    username: root
+    password: root
+
+logging:
+  level:
+    com.github.acehjm.solbycloud.auth: debug
+    org.springframework.cloud.security: debug

@@ -1,0 +1,50 @@
+spring:
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+      loadbalancer:
+        use404: true
+        ribbon:
+          enabled: false
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: common-boot
+        uri: lb://common-boot
+        predicates:
+        - Path=/api/boot/**
+        filters:
+        - StripPrefix=2
+        # 请求大小限制，默认5M，这里限制2M
+        - name: RequestSize
+          args:
+            maxSize: 2000000
+        # Redis限流，每秒
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+        # 重试机制
+        # - name: Retry
+        #   args:
+        #     retries: 3
+        #     statuses: BAD_GATEWAY
+        #     backoff:
+        #       firstBackoff: 10ms
+        #       maxBackoff: 50ms
+        #       factor: 2
+        #       basedOnPreviousValue: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    com.github.acehjm.solbycloud.gateway: debug
+    org.springframework.cloud.gateway: info

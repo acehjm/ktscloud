@@ -1,0 +1,6 @@
+
+
+
+logging:
+  level:
+    com.github.acehjm.solbycloud.boot: debug
