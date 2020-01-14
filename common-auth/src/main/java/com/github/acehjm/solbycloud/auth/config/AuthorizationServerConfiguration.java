@@ -77,7 +77,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         security
                 .allowFormAuthenticationForClients()
                 .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()");
+//                .checkTokenAccess("isAuthenticated()");
+                .checkTokenAccess("permitAll()");
     }
 
     @Bean

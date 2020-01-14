@@ -17,9 +17,14 @@ import java.util.Objects;
 @Configuration
 public class RateLimiterFilter {
 
+//    @Bean
+//    KeyResolver userKeyResolver() {
+//        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("user")));
+//    }
+
     @Bean
-    KeyResolver userKeyResolver() {
-        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("user")));
+    public KeyResolver ipKeyResolver() {
+        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getRemoteAddress()).getHostName());
     }
 
 }
